@@ -33,6 +33,7 @@ public class ThreadTestServiceImpl implements IThreadTestService {
     log.info("thread test starting");
     while (true) {
       int random = ThreadLocalRandom.current().nextInt(1, 100);
+      log.info("test thread count:{}" , random);
       List<Future<Long>> list = new ArrayList<>(random);
       for (int i = 0; i < random; i++) {
         Future<Long> f = asyncTaskService.task();
